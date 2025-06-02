@@ -30,3 +30,5 @@ const sendMessage = async () => {
     connection.close();
   }, 500);
 };
+
+sendMessage();
