@@ -22,4 +22,6 @@ const sendMessage = async () => {
   };
   // send the message
   channel.publish(exchange, routingKey, Buffer.from(JSON.stringify(message)));
+
+  console.log("Message sent");
 };
