@@ -10,4 +10,5 @@ const sendMessage = async () => {
 
   // create a exchange
   await channel.assertExchange(exchange, "direct", { durable: false });
+  // create a queue
 };
