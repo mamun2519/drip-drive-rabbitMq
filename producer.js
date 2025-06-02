@@ -7,4 +7,7 @@ const sendMessage = async () => {
   const queue = "message_queue";
   const exchange = "message_exchange";
   const routingKey = "message_routing_key";
+
+  // create a exchange
+  await channel.assertExchange(exchange, "direct", { durable: false });
 };
