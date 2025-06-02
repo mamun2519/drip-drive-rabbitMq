@@ -20,4 +20,6 @@ const sendMessage = async () => {
     text: "Hello, this is a message from the producer!",
     timestamp: new Date().toISOString(),
   };
+  // send the message
+  channel.publish(exchange, routingKey, Buffer.from(JSON.stringify(message)));
 };
