@@ -5,4 +5,6 @@ const sendMessage = async () => {
   const channel = await connection.createChannel();
 
   const queue = "message_queue";
+  const exchange = "message_exchange";
+  const routingKey = "message_routing_key";
 };
