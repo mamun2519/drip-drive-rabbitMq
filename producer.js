@@ -24,4 +24,9 @@ const sendMessage = async () => {
   channel.publish(exchange, routingKey, Buffer.from(JSON.stringify(message)));
 
   console.log("Message sent");
+
+  setTimeout(() => {
+    channel.close();
+    connection.close();
+  }, 500);
 };
