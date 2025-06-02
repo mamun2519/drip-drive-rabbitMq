@@ -12,4 +12,12 @@ const sendMessage = async () => {
   await channel.assertExchange(exchange, "direct", { durable: false });
   // create a queue
   await channel.assertQueue(queue, { durable: false });
+  // bind the queue to the exchange
+  await channel.bindQueue(queue, exchange, routingKey);
+
+  //message to send
+  const message = {
+    text: "Hello, this is a message from the producer!",
+    timestamp: new Date().toISOString(),
+  };
 };
