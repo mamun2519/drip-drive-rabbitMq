@@ -29,6 +29,11 @@ const producer = async () => {
 
   // find queue between exchange
   await channel.bindQueue(user_send_mail_queue, exchange, routing_key_for_user);
+  await channel.bindQueue(
+    customer_send_mail_queue,
+    exchange,
+    routing_key_for_user
+  );
 };
 
 producer();
