@@ -17,6 +17,8 @@ const producer = async () => {
   const message = {
     to: "juborajislam46@gmail.com",
     form: "programmingHero@gmail.com",
+    subject: "Thank You",
+    bodyL: "Hello world",
   };
 };
 
