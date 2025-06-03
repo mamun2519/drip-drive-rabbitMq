@@ -14,7 +14,7 @@ const producer = async () => {
   // exchange
   const exchange = "send_mail_exchange";
 
-  const message = {
+  const UserMessage = {
     to: "juborajislam46@gmail.com",
     form: "programmingHero@gmail.com",
     subject: "Thank You",
@@ -33,6 +33,13 @@ const producer = async () => {
     customer_send_mail_queue,
     exchange,
     routing_key_for_user
+  );
+
+  // publish message
+  channel.publish(
+    exchange,
+    user_send_mail_queue,
+    Buffer.from(JSON.stringify(message))
   );
 };
 
