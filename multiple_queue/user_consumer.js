@@ -7,6 +7,16 @@ const userConsumer = async () => {
   //queue
   const user_send_mail_queue = "user_send_mail_queue";
   await channel.assertQueue(user_send_mail_queue, { durable: false });
+
+  // receive message
+  await channel.consume(user_send_mail_queue, (message) => {
+    if (message !== null) {
+      const msgContent = JSON.parse(message.content.toString());
+      console.log("Received message for user:", msgContent);
+      // Acknowledge the message
+      channel.ack(message);
+    }
+  });
 };
 
 userConsumer();
