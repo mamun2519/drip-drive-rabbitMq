@@ -13,6 +13,11 @@ const producer = async () => {
 
   // exchange
   const exchange = "send_mail_exchange";
+
+  const message = {
+    to: "juborajislam46@gmail.com",
+    form: "programmingHero@gmail.com",
+  };
 };
 
 producer();
