@@ -17,6 +17,11 @@ const userConsumer = async () => {
       channel.ack(message);
     }
   });
+
+  setTimeout(() => {
+    channel.close();
+    connection.close();
+  }, 500);
 };
 
 userConsumer();
