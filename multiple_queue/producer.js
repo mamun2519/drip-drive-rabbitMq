@@ -10,6 +10,9 @@ const producer = async () => {
   // routing key
   const routing_key_for_user = "user_routing_key";
   const routing_key_for_customer = "customer_routing_key";
+
+  // exchange
+  const exchange = "send_mail_exchange";
 };
 
 producer();
