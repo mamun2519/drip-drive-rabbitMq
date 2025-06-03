@@ -9,6 +9,7 @@ const producer = async () => {
   const customer_send_mail_queue = "customer_send_mail_queue";
   // routing key
   const routing_key_for_user = "user_routing_key";
+  const routing_key_for_customer = "customer_routing_key";
 };
 
 producer();
