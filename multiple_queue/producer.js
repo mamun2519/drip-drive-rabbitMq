@@ -52,7 +52,7 @@ const producer = async () => {
   channel.publish(
     exchange,
     routing_key_for_customer,
-    Buffer.from(JSON.stringify(UserMessage))
+    Buffer.from(JSON.stringify(CustomerMessage))
   );
 
   console.log("Message sent");
