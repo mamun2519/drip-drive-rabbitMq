@@ -25,6 +25,7 @@ const producer = async () => {
   await channel.assertExchange(exchange, "direct", { durable: false });
   // create queue
   await channel.assertQueue(user_send_mail_queue, { durable: false });
+  await channel.assertQueue(customer_send_mail_queue, { durable: false });
 };
 
 producer();
