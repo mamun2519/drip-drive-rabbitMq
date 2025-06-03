@@ -5,6 +5,7 @@ const producer = async () => {
   const channel = await connection.createChannel();
 
   const user_send_mail_queue = "user_send_mail_queue";
+  const customer_send_mail_queue = "customer_send_mail_queue";
 };
 
 producer();
