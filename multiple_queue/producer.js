@@ -20,6 +20,9 @@ const producer = async () => {
     subject: "Thank You",
     bodyL: "Hello world",
   };
+
+  // create exchange
+  await channel.assertExchange(exchange, "direct", { durable: false });
 };
 
 producer();
