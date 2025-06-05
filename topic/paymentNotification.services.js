@@ -12,6 +12,19 @@ const paymentNotificationServices = async () => {
   await channel.assertQueue(queue, { durable: true });
 
   await channel.bindQueue(queue, exchange, "payment.*");
+  channel.consume(queue, (message) => {
+    if (message !== null) {
+      const msgContent = JSON.parse(message.content.toString());
+      console.log("Received message:", msgContent);
+      // Acknowledge the message
+      channel.ack(message);
+    }
+  });
+
+  setTimeout(() => {
+    channel.close();
+    connection.close();
+  }, 500);
 };
 
 paymentNotificationServices();
