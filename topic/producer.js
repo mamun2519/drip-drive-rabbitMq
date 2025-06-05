@@ -17,4 +17,5 @@ const sendMessage = async (routeKey, message) => {
   }, 500);
 };
 
+sendMessage("order.placed", { orderId: 12345, status: "placed" });
 sendMessage();
