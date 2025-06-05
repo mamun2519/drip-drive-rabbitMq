@@ -11,4 +11,12 @@ const OrderNotificationServices = async () => {
 
   // added to condition
   await channel.bindQueue(queue, exchange, "order.*");
+  channel.consume(queue, (message) => {
+    if (message !== null) {
+      const msgContent = JSON.parse(message.content.toString());
+      console.log("Received message:", msgContent);
+      // Acknowledge the message
+      channel.ack(message);
+    }
+  });
 };
