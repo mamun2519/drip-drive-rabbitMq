@@ -8,4 +8,7 @@ const OrderNotificationServices = async () => {
   const exchangeType = "topic";
   await channel.assertExchange(exchange, exchangeType, { durable: true });
   await channel.assertQueue(queue, { durable: true });
+
+  // added to condition
+  await channel.bindQueue(queue, exchange, "order.*");
 };
