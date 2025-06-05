@@ -7,6 +7,8 @@ const paymentNotificationServices = async () => {
   const exchange = "notification_exchange";
   const exchangeType = "topic";
   const queue = "payment_queue";
+
+  await channel.assertExchange(exchange, exchangeType, { durable: true });
 };
 
 paymentNotificationServices();
