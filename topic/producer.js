@@ -19,3 +19,5 @@ const sendMessage = async (routeKey, message) => {
 
 sendMessage("order.placed", { orderId: 12345, status: "placed" });
 sendMessage("payment.processed", { paymentId: 6579, status: "processed" });
+
+//Note: When we use topic that time does not need producer bind queue
