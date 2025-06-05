@@ -1,4 +1,4 @@
-import amqplib from "amqplib";
+const amqplib = require("amqplib");
 
 const paymentNotificationServices = async () => {
   const connection = await amqplib.connect("amqp://localhost");

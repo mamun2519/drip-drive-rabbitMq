@@ -1,4 +1,4 @@
-import amqplib from "amqplib";
+const amqplib = require("amqplib");
 
 const OrderNotificationServices = async () => {
   const connection = await amqplib.connect("amqp://localhost");
@@ -8,7 +8,7 @@ const OrderNotificationServices = async () => {
   const exchangeType = "topic";
   await channel.assertExchange(exchange, exchangeType, { durable: true });
   await channel.assertQueue(queue, { durable: true });
-
+  console.log("run");
   // added to condition
   await channel.bindQueue(queue, exchange, "order.*");
   channel.consume(queue, (message) => {
